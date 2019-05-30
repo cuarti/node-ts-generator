@@ -1,0 +1,65 @@
+{
+  "name": "node-ts-generator",
+  "version": "0.1.0",
+  "description": "CLI tool to build projects with the NodeJS and TypeScript stack",
+  "license": "MIT",
+  "keywords": [
+    "builder",
+    "generator",
+    "cli",
+    "node",
+    "typescript",
+    "ts",
+    "react"
+  ],
+  "main": "bin/index.js",
+  "scripts": {
+    "start": "node bin",
+    "build": "tsc",
+    "dev:start": "npm run clear && ts-node bin",
+    "dev:ts": "tsc --watch",
+    "test": "npm run test:lint && npm run test:jest",
+    "test:lint": "tslint **/*.ts -e '**/*.d.ts' -t verbose",
+    "test:jest": "jest",
+    "clear": "clearb"
+  },
+  "author": {
+    "name": "Albert Cuartiella",
+    "email": "cuarti1992@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuarti/node-ts-builder.git"
+  },
+  "homepage": "https://github.com/cuarti/node-ts-builder#readme",
+  "bugs": {
+    "url": "https://github.com/cuarti/node-ts-builder/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.3",
+    "clearb": "^0.1.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [],
+    "testRegex": "/test/specs/.*/\\w+\\.tsx?",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
